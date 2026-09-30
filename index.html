@@ -4,48 +4,47 @@
     <title>sketch</title>
     <style>
      #sqaure{
-     border-radius: 50%;
-        height: 120 px;
-        width: 120 px;
+        height: 200px;
+        width: 200px;
         position: absolute;
-        background: magenta;
-        box-shadow: 12px 10px #9E0B8F;
+        background: gold;
+        box-shadow: 14px 12px black;
       }
     </style>
   </head>
   <body>
-    <div id="ball">
+    <div id="sqaure">
     </div>
     <script>
-    let nameObj = "ball" ///string global var
-    let speed = 1; //number global var
+    let nameObj = "sqaure" ///string global var
+    let speed = 10; //number global var
     let moving = true; // boolean global var
       
-      let x = 100;
-      let y = 100;
+      let x = 150;
+      let y = 150;
       let dx = speed;
       let dy = speed;
       
-    function moveball(){
+    function moveSqaure(){
     if(moving){
       x += dx;
       y += dy;
-      if( x > window.innerWidth- 50 || x < 0){
+      if( x > window.innerWidth- 200 || x < 2){
         dx = -dx;
       }
-      if (y > window.innerHeight - 50 || y < 0){
+      if (y > window.innerHeight - 200 || y < 2){
         dy = -dy;
       }
       
-      ball.style.left = x + "px";
-      ball.style.top = y + "px";
+      sqaure.style.left = x + "px";
+      sqaure.style.top = y + "px";
     }
       }
       function showInfo(){
         console.log(nameObj, speed, moving);
       }
       showInfo();
-      setInterval(moveball,20);
+      setInterval(moveSqaure,10);
     </script>
   </body>
 </html>
